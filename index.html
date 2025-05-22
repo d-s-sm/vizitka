@@ -1,38 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Material 3 Static Site</title>
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Импорт Material Web Components -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@material/web@1.0.0/all.min.js"></script>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сайт-визитка</title>
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Material Symbols (иконки) -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-</head>
-<body>
+    <!-- Material Web Components -->
+    <script type="module" src="https://unpkg.com/@material/web/all.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@material/web@latest/all.css"
+    />
+  </head>
+  <body>
 
-  <header>
-    <md-top-app-bar>
-      <md-icon-button slot="navigationIcon">
-        <span class="material-symbols-outlined">menu</span>
-      </md-icon-button>
-      <div slot="title">Material 3 Site</div>
-    </md-top-app-bar>
-  </header>
+    <!-- Header -->
+    <header class="md-surface header" elevation="3">
+      <nav class="nav">
+        <span class="logo">Моё Имя</span>
+        <ul class="nav-links">
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section class="content">
-      <h1>Добро пожаловать!</h1>
-      <p>Это статический сайт, созданный с использованием Material Design 3.</p>
-
-      <md-filled-button>Кнопка</md-filled-button>
-      <md-outlined-button>Другая кнопка</md-outlined-button>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Привет, я — дизайнер</h1>
+      <p>Создаю современные и удобные интерфейсы</p>
+      <md-filled-button onclick="scrollToSection('about')">Узнать больше</md-filled-button>
     </section>
-  </main>
 
-  <script type="module" src="script.js"></script>
-</body>
+    <!-- Content Section -->
+    <section id="about" class="content">
+      <h2>Обо мне</h2>
+      <p>Я — UI/UX-дизайнер с опытом более 5 лет в создании цифровых продуктов...</p>
+    </section>
+
+    <section id="projects" class="cards">
+      <h2>Проекты</h2>
+      <div class="card-grid">
+        <md-outlined-card>
+          <div class="card-content">
+            <h3>Проект 1</h3>
+            <p>Описание проекта 1...</p>
+          </div>
+        </md-outlined-card>
+        <md-outlined-card>
+          <div class="card-content">
+            <h3>Проект 2</h3>
+            <p>Описание проекта 2...</p>
+          </div>
+        </md-outlined-card>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <p>Связаться со мной: <a href="mailto:you@example.com">you@example.com</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

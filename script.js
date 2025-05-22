@@ -1,2 +1,4 @@
-// Здесь можно добавить JS-логику
-console.log("Material 3 Static Site запущен");
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
